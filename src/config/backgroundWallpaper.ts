@@ -19,7 +19,7 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	position: "center",
 	carousel: {
 		enable: true,
-		interval: 5,
+		interval: 10,
 	},
 	zIndex: -1,
 	opacity: 0.8,
