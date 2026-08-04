@@ -1,9 +1,9 @@
 import type { SakuraConfig } from "../types/config";
 
 export const sakuraConfig: SakuraConfig = {
-	enable: false,
+	enable: true, // 启用樱花特效
 	switchable: true,
-	sakuraNum: 21,
+	sakuraNum: 10,// 樱花数量
 	limitTimes: -1,
 	size: {
 		min: 0.5, // 樱花最小尺寸倍数
@@ -20,7 +20,7 @@ export const sakuraConfig: SakuraConfig = {
 		},
 		vertical: {
 			min: 1.5, // 垂直移动速度最小值
-			max: 2.2, // 垂直移动速度最大值
+			max: 1.8, // 垂直移动速度最大值
 		},
 		rotation: 0.03, // 旋转速度
 		fadeSpeed: 0.03, // 消失速度，不应大于最小不透明度
