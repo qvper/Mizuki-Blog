@@ -16,15 +16,16 @@ export const profileConfig: ProfileConfig = {
 			url: "https://space.bilibili.com/1634578641",
 		},
 		{
-			name: "Gitee",
-			icon: "mdi:git",
-			url: "https://gitee.com/qziii",
-		},
-		{
 			name: "GitHub",
 			icon: "fa7-brands:github",
 			url: "https://github.com/qvper",
 		},
+		{
+			name: "Gitee",
+			icon: "mdi:git",
+			url: "https://gitee.com/qziii",
+		},
+		
 		//{
 		//	name: "Codeberg",
 		//	icon: "simple-icons:codeberg",
