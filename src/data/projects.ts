@@ -20,7 +20,7 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
-	{
+	/* {
 		id: "mizuki",
 		title: "Mizuki",
 		description:
@@ -96,7 +96,7 @@ export const projectsData: Project[] = [
 		endDate: "2025-10-01",
 		tags: ["Android", "Tool", "Frontend"],
 		showImage: false,
-	},
+	}, */
 ];
 
 // Get project statistics
