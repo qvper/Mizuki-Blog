@@ -17,7 +17,7 @@ export interface AnimeItem {
 }
 
 const localAnimeList: AnimeItem[] = [
-	{
+	/* {
 		title: "Lycoris Recoil",
 		status: "completed",
 		rating: 9.8,
@@ -96,7 +96,7 @@ const localAnimeList: AnimeItem[] = [
 		totalEpisodes: 12,
 		startDate: "2025-07",
 		endDate: "2025-10",
-	},
+	}, */
 ];
 
 export default localAnimeList;

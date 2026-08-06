@@ -14,23 +14,23 @@ export type DeviceCategory = Record<string, Device[]> & {
 };
 
 export const devicesData: DeviceCategory = {
-	OnePlus: [
+	Apple: [
 		{
-			name: "OnePlus 13T",
-			image: "/images/device/oneplus13t.webp",
-			specs: "Gray / 16G + 1TB",
-			description: "Flagship performance, Hasselblad imaging, 80W SuperVOOC.",
-			link: "https://www.oneplus.com/cn/13t",
+			name: "iPhone 17",
+			image: "/images/device/iphone-17.webp",
+			specs: "8GB RAM / 256GB Storage",
+			description: "A19 Bionic chip, 120Hz ProMotion, all-day battery life.",
+			link: "https://www.apple.com/iphone-17/",
 		},
 	],
-	Router: [
+	Xiaomi: [
 		{
-			name: "GL-MT3000",
-			image: "/images/device/mt3000.webp",
-			specs: "1000Mbps / 2.5G",
+			name: "Xiaomi Pad 5 Pro 12.4",
+			image: "/images/device/xiaomi-pad-5-pro-12.4.webp",
+			specs: "8GB RAM / 256GB Storage",
 			description:
-				"Portable WiFi 6 router suitable for business trips and home use.",
-			link: "https://www.gl-inet.cn/products/gl-mt3000/",
+				"Snapdragon 870, 12.4 120Hz display, 67W turbo charging.",
+			link: "https://www.mi.com/xiaomipad5pro-124",
 		},
 	],
 };
