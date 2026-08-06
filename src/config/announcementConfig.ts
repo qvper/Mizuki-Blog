@@ -4,7 +4,7 @@ import type { AnnouncementConfig } from "../types/config";
 export const announcementConfig: AnnouncementConfig = {
 	title: "ブログへようこそ！", // 公告标题，填空使用i18n字符串Key.announcement
 	content: "🌱 新站建设中，欢迎常来看看。",// 公告内容
-	closable: false, // 允许用户关闭公告
+	closable: true, // 允许用户关闭公告
 	link: {
 		enable: true, // 启用链接
 		text: "Learn More", // 链接文本
