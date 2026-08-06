@@ -28,7 +28,7 @@ export const skillsData: Skill[] = [
 		category: "backend",
 		level: "beginner",
 		experience: { years: 0, months: 6 },
-		projects: ["embedded-system", "kernel-module"],
+		//projects: ["embedded-system", "kernel-module"],
 		color: "#A8B9CC",
 	},
 	// Tools
@@ -63,7 +63,7 @@ export const skillsData: Skill[] = [
 		category: "tools",
 		level: "beginner",
 		experience: { years: 0, months: 4 },
-		projects: ["server-management", "shell-scripting"],
+		//projects: ["server-management", "shell-scripting"],
 		color: "#FCC624",
 	},
 	// Frontend Skills
