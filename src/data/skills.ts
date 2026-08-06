@@ -20,6 +20,54 @@ export interface Skill {
 export const skillsData: Skill[] = [
 	// Frontend Skills
 	{
+		id: "c",
+		name: "C",
+		description:
+			"A low-level systems programming language, the foundation for operating systems and embedded systems development.",
+		icon: "logos:c",
+		category: "backend",
+		level: "beginner",
+		experience: { years: 0, months: 6 },
+		projects: ["embedded-system", "kernel-module"],
+		color: "#A8B9CC",
+	},
+	// Tools
+	{
+		id: "git",
+		name: "Git",
+		description:
+			"A distributed version control system, an essential tool for code management and team collaboration.",
+		icon: "logos:git-icon",
+		category: "tools",
+		level: "beginner",
+		experience: { years: 0, months: 6 },
+		color: "#F05032",
+	},
+	{
+		id: "vscode",
+		name: "VS Code",
+		description:
+			"A lightweight but powerful code editor with a rich plugin ecosystem.",
+		icon: "logos:visual-studio-code",
+		category: "tools",
+		level: "beginner",
+		experience: { years: 0, months: 10 },
+		color: "#007ACC",
+	},
+	{
+		id: "linux",
+		name: "Linux",
+		description:
+			"An open-source operating system, the preferred choice for server deployment and development environments.",
+		icon: "logos:linux-tux",
+		category: "tools",
+		level: "beginner",
+		experience: { years: 0, months: 4 },
+		projects: ["server-management", "shell-scripting"],
+		color: "#FCC624",
+	},
+	// Frontend Skills
+	/* {
 		id: "javascript",
 		name: "JavaScript",
 		description:
@@ -248,18 +296,6 @@ export const skillsData: Skill[] = [
 		color: "#00599C",
 	},
 	{
-		id: "c",
-		name: "C",
-		description:
-			"A low-level systems programming language, the foundation for operating systems and embedded systems development.",
-		icon: "logos:c",
-		category: "backend",
-		level: "intermediate",
-		experience: { years: 1, months: 2 },
-		projects: ["embedded-system", "kernel-module"],
-		color: "#A8B9CC",
-	},
-	{
 		id: "kotlin",
 		name: "Kotlin",
 		description:
@@ -415,29 +451,7 @@ export const skillsData: Skill[] = [
 		projects: ["task-manager-app"],
 		color: "#FFCA28",
 	},
-
 	// Tools
-	{
-		id: "git",
-		name: "Git",
-		description:
-			"A distributed version control system, an essential tool for code management and team collaboration.",
-		icon: "logos:git-icon",
-		category: "tools",
-		level: "advanced",
-		experience: { years: 3, months: 0 },
-		color: "#F05032",
-	},
-	{
-		id: "vscode",
-		name: "VS Code",
-		description:
-			"A lightweight but powerful code editor with a rich plugin ecosystem.",
-		icon: "logos:visual-studio-code",
-		category: "tools",
-		level: "expert",
-		experience: { years: 3, months: 6 },
-		color: "#007ACC",
 	},
 	{
 		id: "webstorm",
@@ -581,18 +595,7 @@ export const skillsData: Skill[] = [
 		projects: ["cloud-deployment", "serverless-app"],
 		color: "#FF9900",
 	},
-	{
-		id: "linux",
-		name: "Linux",
-		description:
-			"An open-source operating system, the preferred choice for server deployment and development environments.",
-		icon: "logos:linux-tux",
-		category: "tools",
-		level: "intermediate",
-		experience: { years: 2, months: 0 },
-		projects: ["server-management", "shell-scripting"],
-		color: "#FCC624",
-	},
+	
 	{
 		id: "postman",
 		name: "Postman",
@@ -675,5 +678,5 @@ export const skillsData: Skill[] = [
 		experience: { years: 0, months: 8 },
 		projects: ["e2e-testing"],
 		color: "#17202C",
-	},
+	}, */
 ];
