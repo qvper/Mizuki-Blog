@@ -1,49 +1,30 @@
 
-This website is built with the **Astro** framework using the [Mizuki](https://github.com/LyraVoid/Mizuki) theme.
+你好，我是汐音。
 
+
+我对开源很有兴趣，希望未来能为社区贡献一份力量。
+
+### 这个博客写什么
+技术笔记、生活随笔、旅行、测评......
+
+### 为什么写这个博客
+> 想要在互联网上留下自己的痕迹算吗？
+
+写这个博客的初衷是记录自己。对抗遗忘是一方面，更重要的是分享：分享遇到的困难、分享自己的知识、分享自己的见解。
+
+第一次知道开源概念的时候颇为震撼，我非常喜欢这种氛围，这个博客是记录我学习的地方，也会是我未来能回馈社区的一小步。我正处于大量输入的阶段，写的文章会尽量详细。
+
+如果你也对开源感兴趣，或者发现文章有误，欢迎交流
+
+### 感谢
+
+感谢[Astro](https://astro.build)提供的极速构建体验，以及[Mizuki](https://github.com/LyraVoid/Mizuki)主题的优雅设计。
 ::github{repo="LyraVoid/Mizuki"}
 
-## 🌟 Theme Features
+### 联系我
 
-### 🎨 Design & User Experience
-- **Modern & Elegant Design** - Clean, minimalist interface with beautiful typography
-- **Fully Responsive** - Optimized for all devices from mobile to desktop
-- **Dark/Light Mode** - Automatic theme switching with smooth transitions
-- **Beautiful Typography** - Enhanced readability with JetBrains Mono font
-- **Smooth Animations** - Fluid page transitions and interactive elements
+💻 [Github](https://github.com/qvper)
 
-### 🔍 Content & Search
-- **Advanced Search** - Powered by [Pagefind](https://pagefind.app/) for fast, accurate results
-- **Enhanced Markdown** - Extended syntax with code highlighting and math support
-- **Interactive Table of Contents** - Auto-scroll navigation for long articles
-- **RSS Feed Generation** - Stay updated with automatic feed generation
-- **Reading Time Estimation** - Know how long articles take to read
-- **Post Categorization** - Organize content with tags and categories
+🐦 [Twitter/X](https://x.com/z0648593524865?s=21)
 
-
-
-### 📱 Special Pages
-- **Anime Tracking Page** - Track your anime watching progress with ratings
-- **Friends Links Page** - Showcase friend websites with beautiful cards
-- **Diary/Moments Page** - Share life moments like social media posts
-- **Archive Page** - Organized timeline view of all posts
-- **About Page** - Customizable personal introduction (this page!)
-
-### 🛠 Technical Features
-- **Enhanced Code Blocks** - Powered by [Expressive Code](https://expressive-code.com/)
-- **Math Support** - LaTeX rendering with KaTeX for mathematical expressions
-- **Image Optimization** - PhotoSwipe gallery with lazy loading
-- **SEO Optimized** - Built-in sitemap and meta tags for better search visibility
-- **Performance Optimized** - Fast loading with caching and optimization
-- **Comment System Ready** - Integration support for Twikoo comments
-
-### 🎯 Advanced Markdown Features
-- **Callouts & Admonitions** - Beautiful info boxes with `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]`
-- **Mathematical Equations** - Write LaTeX math with `$inline$` and `$$block$$` syntax
-- **GitHub Cards** - Embed repository cards with `::github{repo="user/repo"}`
-- **Syntax Highlighting** - Advanced code highlighting with line numbers
-- **Copy Code Buttons** - Easy code copying functionality
-
----
-
-*Built with ❤️ using Astro and inspired by modern web design principles.*
+📧 [Email](mailto:qvper-xing@outlook.com)
