@@ -273,7 +273,7 @@ A：按钮绑定的是宏名，改名不影响宏；但宏引用的是工作表�
 - `False`：静默（自动化测试用）
 - **执行流程**：
 
-```vba
+```text
 Set wsOrder = Sheets("订货表")       ' 目标工作表
 Set wsCat = Sheets("产品目录")        ' 数据来源
 wsOrder.Cells.Clear                   ' ① 清空整张订货表（含已填数据！）
@@ -281,7 +281,7 @@ wsOrder.Cells.Clear                   ' ① 清空整张订货表（含已填数
 
 ##### **① 第 1 行：业绩系数区域**
 
-```vba
+```text
 wsOrder.Cells(1, 1).Value = "使用周期营业额"
 wsOrder.Cells(1, 2).Value = 0
 wsOrder.Cells(1, 3).Value = "订货周期营业额"
@@ -297,7 +297,7 @@ wsOrder.Cells(1, 6).Formula = "=IF(OR(B1=0,D1=0),1,D1/B1)"
 
 **② 营业额数据验证**（B1、D1 只允许 ≥0 数字）
 
-```vba
+```text
 With wsOrder.Range("B1")
     .Validation.Delete                    ' 先删旧验证，避免重复添加报错
     .Validation.Add Type:=xlValidateDecimal, AlertStyle:=xlValidAlertStop, _
@@ -308,7 +308,7 @@ End With
 
 **③ 分类块循环**（7 个分类）
 
-```vba
+```text
 categories = Array("乳制品", "茶叶咖啡", "果汁果酱", "小料", "装饰辅料", "糖浆", "清洁用品")
 currentRow = 3
 For i = LBound(categories) To UBound(categories)
@@ -318,21 +318,21 @@ For i = LBound(categories) To UBound(categories)
 
 **(a) 分类标题行**（合并 A:M，浅蓝底加粗）
 
-```vba
+```text
 wsOrder.Cells(currentRow, 1).Value = categories(i)
 wsOrder.Range(wsOrder.Cells(currentRow, 1), wsOrder.Cells(currentRow, 13)).Merge
 ```
 
 **(b) 列标题行**（品号/产品名称/…/订货单位，13 列）
 
-```vba
+```text
 wsOrder.Cells(currentRow, 1).Value = "品号"
 ... 共 13 个标题 ...
 ```
 
 **(c) 产品行**（遍历产品目录，分类匹配才写入）
 
-```vba
+```text
 lastRow = wsCat.Cells(wsCat.Rows.count, 2).End(xlUp).Row   ' 产品目录最后一行
 For r = 3 To lastRow
     If wsCat.Cells(r, 3).Value = categories(i) Then       ' C列=分类 匹配
@@ -352,7 +352,7 @@ For r = 3 To lastRow
 
 **④ 核心公式（每个产品行都写 6 个公式）**
 
-```vba
+```text
 ' 期末库存 H：按品号从盘点表取「当前库存」
 fH = "=IFERROR(IF(ISBLANK(INDEX(盘点表!$E$1:$E$2000,MATCH(A{r},盘点表!$B$1:$B$2000,0))),"""",INDEX(...)),"""")"
 ' 本周使用量 I = 期初 + 进货 - 报废 - 期末（期末空时显示 0）
@@ -374,7 +374,7 @@ wsOrder.Cells(currentRow, 13).Formula = "=IF(C{r}>1,""箱"",D{r})"
 - E/F/G 列（期初/进货/报废）：只能填 ≥0 数字
 - H 列（期末库存）：**自定义验证 = FALSE**，即**任何手动输入都会被拒绝**
 
-```vba
+```text
 With wsOrder.Cells(currentRow, 8)
     .Validation.Add Type:=xlValidateCustom, AlertStyle:=xlValidAlertStop, Formula1:="FALSE"
     .Validation.ErrorMessage = "期末库存自动取自盘点表，请勿手动填写；如需修改请改盘点表"
@@ -383,7 +383,7 @@ End With
 
 **⑥ 完成**
 
-```vba
+```text
 If showMsg Then MsgBox "订货表已生成！"
 ```
 
@@ -393,7 +393,7 @@ If showMsg Then MsgBox "订货表已生成！"
 
 **作用**：订货表「生成订货表」按钮的入口，**先弹确认框**，确认后才调用生成订货表。
 
-```vba
+```text
 Sub RegenOrder()
     If MsgBox("确定要重新生成订货表吗？" & vbCrLf & _
         "期初库存/进货量/报废会被清空，期末库存将自动从盘点表同步。", _
@@ -413,7 +413,7 @@ End Sub
 #### 3. `读取上周数据()`
 **作用**：从「订货历史」里找每个品号**最新一条**期末库存，填到订货表「期初库存」（E 列）。
 
-```vba
+```text
 orderLastRow = wsOrder.Cells(wsOrder.Rows.count, 1).End(xlUp).Row   ' 订货表最后一行
 hisLastRow = wsHis.Cells(wsHis.Rows.count, 2).End(xlUp).Row          ' 历史表最后一行
 If hisLastRow < 2 Then
@@ -424,7 +424,7 @@ End If
 
 遍历订货表的产品行（A 列有品号 + C 列是数字），对每个品号在历史表里**从后往前**找：
 
-```vba
+```text
 For h = hisLastRow To 2 Step -1
     If wsHis.Cells(h, 2).Value = pinhao Then   ' B列=品号
         latestStock = wsHis.Cells(h, 3).Value  ' C列=期末库存
@@ -442,7 +442,7 @@ End If
 #### 4. `保存本周数据()`
 **作用**：把订货表「期末库存」（H 列）按「日期+品号」存入「订货历史」，**同一天同品号只保留一条**（防止重复点按钮产生重复行）。
 
-```vba
+```text
 today = Date                       ' 今天日期
 For r = 3 To orderLastRow
     If pinhao <> "" And IsNumeric(wsOrder.Cells(r, 3).Value) And _
@@ -478,7 +478,7 @@ MsgBox "已保存 " & count & " 条数据到订货历史！"
 
 **开头：性能优化 + 错误处理**
 
-```vba
+```text
 On Error GoTo EH                     ' 出任何错跳到底部 EH 统一处理
 Application.ScreenUpdating = False   ' 关闭屏幕刷新（加快速度）
 Application.EnableEvents = False     ' 暂时禁用事件
@@ -487,7 +487,7 @@ Application.Calculation = xlCalculationManual  ' 手动计算（加快速度）
 
 **第 1 步：记录现有库存（品号 → 库存）**
 
-```vba
+```text
 Dim oldStock As Object
 Set oldStock = CreateObject("Scripting.Dictionary")   ' 字典：品号 → 库存
 For r = 4 To lastRow
@@ -504,7 +504,7 @@ Next r
 
 **第 2 步：清空 + 重建**
 
-```vba
+```text
 wsInv.Cells.Clear
 currentRow = 2                      ' 从第 2 行开始（第 1 行留空）
 ```
@@ -514,7 +514,7 @@ currentRow = 2                      ' 从第 2 行开始（第 1 行留空）
 - 列标题行（品号/产品名称/盘点单位/当前库存）
 - 产品行：写品号/名称/单位 + **按品号回填库存**
 
-```vba
+```text
 If oldStock.Exists(key) Then
     wsInv.Cells(currentRow, 5).Value = oldStock(key)   ' 有旧值才回填
 End If
@@ -522,7 +522,7 @@ End If
 
 **第 3 步：E 列数据验证**（店员只能填 ≥0 数字）
 
-```vba
+```text
 With wsInv.Cells(currentRow, 5)
     .Validation.Add Type:=xlValidateDecimal, AlertStyle:=xlValidAlertStop, _
         Operator:=xlGreaterEqual, Formula1:="0"
@@ -530,7 +530,7 @@ With wsInv.Cells(currentRow, 5)
 
 **结尾：恢复设置**
 
-```vba
+```text
 Application.Calculation = xlCalculationAutomatic
 Application.EnableEvents = True
 Application.ScreenUpdating = True
@@ -551,7 +551,7 @@ End Sub
 
 **作用**：盘点表按钮的入口，调用 `生成盘点表(True)`（弹窗版）。
 
-```vba
+```text
 Sub SyncInventory()
     ' 供自动化测试/调用使用的英文入口
     Call 生成盘点表(True)
@@ -564,7 +564,7 @@ End Sub
 
 **作用**：打开文件时自动执行，静默同步盘点表。
 
-```vba
+```text
 Private Sub Workbook_Open()
     ' 打开文件时自动按产品目录同步盘点表（行数自动、库存按品号保留）
     On Error Resume Next              ' 出错也不弹任何提示（静默失败）
@@ -608,6 +608,3 @@ End Sub
 - `MsgBox` 打印变量：`MsgBox "当前行：" & currentRow`
 - 逐步执行：VBA 编辑器里按 `F8` 单步运行
 - 出错时看 `Err.Description`
-
- 
- 
