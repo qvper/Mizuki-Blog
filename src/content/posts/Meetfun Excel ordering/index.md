@@ -10,7 +10,7 @@ author: qvper
 sourceLink: "https://github.com/qvper/Mizuki-Blog"
 draft: false
 date: 2026-10-16
-image: "./cover.webp"
+image: "/images/cover.webp"
 pubDate: 2026-10-18
 permalink: "meetfun-excel-ordering"
 ---
